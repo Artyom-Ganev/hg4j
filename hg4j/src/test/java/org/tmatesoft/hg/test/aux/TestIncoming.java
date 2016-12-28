@@ -14,7 +14,7 @@
  * the terms of a license other than GNU General Public License
  * contact TMate Software at support@hg4j.com
  */
-package org.tmatesoft.hg.test;
+package org.tmatesoft.hg.test.aux;
 
 import static org.hamcrest.CoreMatchers.equalTo;
 
@@ -24,6 +24,7 @@ import java.util.HashSet;
 import java.util.List;
 
 import org.junit.Assert;
+import org.junit.Ignore;
 import org.junit.Rule;
 import org.junit.Test;
 import org.tmatesoft.hg.core.HgChangeset;
@@ -33,12 +34,20 @@ import org.tmatesoft.hg.core.Nodeid;
 import org.tmatesoft.hg.repo.HgLookup;
 import org.tmatesoft.hg.repo.HgRemoteRepository;
 import org.tmatesoft.hg.repo.HgRepository;
+import org.tmatesoft.hg.test.utils.Configuration;
+import org.tmatesoft.hg.test.utils.ErrorCollectorExt;
+import org.tmatesoft.hg.test.utils.ExecHelper;
+import org.tmatesoft.hg.test.utils.LogOutputParser;
+import org.tmatesoft.hg.test.utils.OutputParser;
+import org.tmatesoft.hg.test.utils.RepoUtils;
 
 /**
  *
  * @author Artem Tikhomirov
  * @author TMate Software Ltd.
  */
+//TODO: fix test
+@Ignore
 public class TestIncoming {
 	
 	@Rule

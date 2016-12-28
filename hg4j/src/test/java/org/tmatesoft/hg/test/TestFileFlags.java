@@ -23,6 +23,7 @@ import java.io.File;
 
 import org.junit.After;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Rule;
 import org.junit.Test;
 import org.tmatesoft.hg.internal.Internals;
@@ -31,6 +32,10 @@ import org.tmatesoft.hg.repo.HgDataFile;
 import org.tmatesoft.hg.repo.HgManifest.Flags;
 import org.tmatesoft.hg.repo.HgRepository;
 import org.tmatesoft.hg.repo.HgRuntimeException;
+import org.tmatesoft.hg.test.utils.Configuration;
+import org.tmatesoft.hg.test.utils.ErrorCollectorExt;
+import org.tmatesoft.hg.test.utils.ExecHelper;
+import org.tmatesoft.hg.test.utils.OutputParser;
 import org.tmatesoft.hg.util.FileInfo;
 import org.tmatesoft.hg.util.FileWalker;
 import org.tmatesoft.hg.util.Path;
@@ -46,6 +51,8 @@ import org.tmatesoft.hg.util.PathRewrite;
  * @author Artem Tikhomirov
  * @author TMate Software Ltd.
  */
+//TODO: fix test
+@Ignore
 public class TestFileFlags {
 	@Rule
 	public ErrorCollectorExt errorCollector = new ErrorCollectorExt();

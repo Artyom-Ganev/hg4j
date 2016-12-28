@@ -27,6 +27,7 @@ import org.junit.Test;
 import org.tmatesoft.hg.internal.ByteArrayDataAccess;
 import org.tmatesoft.hg.internal.DataAccess;
 import org.tmatesoft.hg.internal.InflaterDataAccess;
+import org.tmatesoft.hg.test.utils.ErrorCollectorExt;
 
 /**
  * 

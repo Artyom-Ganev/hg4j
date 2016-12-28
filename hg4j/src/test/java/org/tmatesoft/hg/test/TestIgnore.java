@@ -31,6 +31,9 @@ import org.tmatesoft.hg.repo.HgInternals;
 import org.tmatesoft.hg.repo.HgLookup;
 import org.tmatesoft.hg.repo.HgRepository;
 import org.tmatesoft.hg.repo.HgRepositoryFiles;
+import org.tmatesoft.hg.test.utils.Configuration;
+import org.tmatesoft.hg.test.utils.ErrorCollectorExt;
+import org.tmatesoft.hg.test.utils.RepoUtils;
 import org.tmatesoft.hg.util.Path;
 
 /**

@@ -25,6 +25,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 
+import org.junit.Ignore;
 import org.junit.Rule;
 import org.junit.Test;
 import org.tmatesoft.hg.core.HgAddRemoveCommand;
@@ -42,12 +43,17 @@ import org.tmatesoft.hg.repo.HgLookup;
 import org.tmatesoft.hg.repo.HgPhase;
 import org.tmatesoft.hg.repo.HgRemoteRepository;
 import org.tmatesoft.hg.repo.HgRepository;
+import org.tmatesoft.hg.test.utils.ErrorCollectorExt;
+import org.tmatesoft.hg.test.utils.HgServer;
+import org.tmatesoft.hg.test.utils.RepoUtils;
 import org.tmatesoft.hg.util.Path;
 
 /**
  * @author Artem Tikhomirov
  * @author TMate Software Ltd.
  */
+//TODO: fix test
+@Ignore
 public class TestPull {
 
 	@Rule

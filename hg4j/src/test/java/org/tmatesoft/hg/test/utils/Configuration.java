@@ -14,7 +14,7 @@
  * the terms of a license other than GNU General Public License
  * contact TMate Software at support@hg4j.com
  */
-package org.tmatesoft.hg.test.model;
+package org.tmatesoft.hg.test.utils;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -58,7 +58,7 @@ public class Configuration {
     }
 
     public HgRepository own() throws Exception {
-        return lookup.detectFromWorkingDir();
+        return lookup.detect(getRoot());
     }
 
     // fails if repo not found
@@ -105,7 +105,7 @@ public class Configuration {
         return testDataDir;
     }
 
-    private File getRoot() {
+    public File getRoot() {
         if (root == null) {
             root = new File(userDir + TESTS_REPO_PATH);
             assertTrue(root.exists());

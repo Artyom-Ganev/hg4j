@@ -29,13 +29,18 @@ import org.tmatesoft.hg.core.HgStatusCommand;
 import org.tmatesoft.hg.repo.HgRepository;
 import org.tmatesoft.hg.repo.HgSubrepoLocation;
 import org.tmatesoft.hg.repo.HgSubrepoLocation.Kind;
+import org.tmatesoft.hg.test.utils.Configuration;
+import org.tmatesoft.hg.test.utils.ErrorCollectorExt;
+import org.tmatesoft.hg.test.utils.ExecHelper;
+import org.tmatesoft.hg.test.utils.StatusOutputParser;
 import org.tmatesoft.hg.util.Path;
 
 /**
  * 
  * @author Artem Tikhomirov
  * @author TMate Software Ltd.
- */
+ *///TODO: fix test
+@Ignore
 public class TestSubrepo {
 
 	@Rule

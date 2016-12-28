@@ -31,6 +31,7 @@ import org.tmatesoft.hg.core.SessionContext;
 import org.tmatesoft.hg.internal.BasicSessionContext;
 import org.tmatesoft.hg.internal.Internals;
 import org.tmatesoft.hg.internal.RepoInitializer;
+import org.tmatesoft.hg.test.utils.ErrorCollectorExt;
 import org.tmatesoft.hg.util.PathRewrite;
 
 /**

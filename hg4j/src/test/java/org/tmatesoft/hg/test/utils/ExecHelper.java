@@ -14,7 +14,7 @@
  * the terms of a license other than GNU General Public License
  * contact TMate Software at support@hg4j.com
  */
-package org.tmatesoft.hg.test;
+package org.tmatesoft.hg.test.utils;
 
 import java.io.File;
 import java.io.IOException;
@@ -51,7 +51,7 @@ public class ExecHelper extends ProcessExecHelper {
 				}
 				// PATHEXT controls precedence of .exe, .bat and .cmd files, usually .exe wins
 				if (new File(pe, commandName + ".bat").exists() || new File(pe, commandName + ".cmd").exists()) {
-					ArrayList<String> command = new ArrayList<String>();
+					ArrayList<String> command = new ArrayList<>();
 					command.add("cmd.exe");
 					command.add("/C");
 					command.addAll(cmd);

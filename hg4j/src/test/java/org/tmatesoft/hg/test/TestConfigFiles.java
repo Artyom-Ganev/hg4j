@@ -33,7 +33,9 @@ import org.tmatesoft.hg.repo.HgRepoConfig.ExtensionsSection;
 import org.tmatesoft.hg.repo.HgRepoConfig.PathsSection;
 import org.tmatesoft.hg.repo.HgRepoConfig.Section;
 import org.tmatesoft.hg.repo.HgRepository;
-import org.tmatesoft.hg.test.model.Configuration;
+import org.tmatesoft.hg.test.utils.Configuration;
+import org.tmatesoft.hg.test.utils.ErrorCollectorExt;
+import org.tmatesoft.hg.test.utils.RepoUtils;
 
 /**
  * 

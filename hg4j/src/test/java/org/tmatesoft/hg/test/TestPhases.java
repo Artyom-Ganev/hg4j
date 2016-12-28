@@ -22,6 +22,7 @@ import java.util.ArrayList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import org.junit.Ignore;
 import org.junit.Rule;
 import org.junit.Test;
 import org.tmatesoft.hg.core.Nodeid;
@@ -35,12 +36,18 @@ import org.tmatesoft.hg.repo.HgParentChildMap;
 import org.tmatesoft.hg.repo.HgPhase;
 import org.tmatesoft.hg.repo.HgRepository;
 import org.tmatesoft.hg.repo.HgRuntimeException;
+import org.tmatesoft.hg.test.utils.Configuration;
+import org.tmatesoft.hg.test.utils.ErrorCollectorExt;
+import org.tmatesoft.hg.test.utils.ExecHelper;
+import org.tmatesoft.hg.test.utils.OutputParser;
 
 /**
  * {hg4j.tests.repos}/test-phases/
  * @author Artem Tikhomirov
  * @author TMate Software Ltd.
  */
+//TODO: fix test
+@Ignore
 public class TestPhases {
 	
 	@Rule

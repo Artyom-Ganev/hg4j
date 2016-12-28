@@ -24,6 +24,7 @@ import java.util.Collections;
 import java.util.List;
 
 import org.junit.Assert;
+import org.junit.Ignore;
 import org.junit.Rule;
 import org.junit.Test;
 import org.tmatesoft.hg.core.HgCallbackTargetException;
@@ -36,6 +37,9 @@ import org.tmatesoft.hg.repo.HgLookup;
 import org.tmatesoft.hg.repo.HgMergeState;
 import org.tmatesoft.hg.repo.HgMergeState.Entry;
 import org.tmatesoft.hg.repo.HgRepository;
+import org.tmatesoft.hg.test.utils.Configuration;
+import org.tmatesoft.hg.test.utils.ErrorCollectorExt;
+import org.tmatesoft.hg.test.utils.RepoUtils;
 import org.tmatesoft.hg.util.Path;
 
 /**
@@ -43,6 +47,8 @@ import org.tmatesoft.hg.util.Path;
  * @author Artem Tikhomirov
  * @author TMate Software Ltd.
  */
+//TODO: fix test
+@Ignore
 public class TestMerge {
 
 	@Rule
