@@ -33,6 +33,7 @@ import org.tmatesoft.hg.repo.HgRepoConfig.ExtensionsSection;
 import org.tmatesoft.hg.repo.HgRepoConfig.PathsSection;
 import org.tmatesoft.hg.repo.HgRepoConfig.Section;
 import org.tmatesoft.hg.repo.HgRepository;
+import org.tmatesoft.hg.test.model.Configuration;
 
 /**
  * 
@@ -49,16 +50,16 @@ public class TestConfigFiles {
 		ConfigFile configFile = new ConfigFile(new BasicSessionContext(null));
 		configFile.addLocation(new File(Configuration.get().getTestDataDir(), "sample.rc"));
 		// section1 has key1 unset, key2 overridden from included, key4 from second occurence
-		HashMap<String, String> section1 = new HashMap<String, String>();
+		HashMap<String, String> section1 = new HashMap<>();
 		section1.put("key2", "alternative value 2");
 		section1.put("key3", "value 3");
 		section1.put("key4", "value 4");
 		// section2 comes from included config
-		HashMap<String, String> section2 = new HashMap<String, String>();
+		HashMap<String, String> section2 = new HashMap<>();
 		section2.put("key1", "value 1-2");
-		HashMap<String, String> section3 = new HashMap<String, String>();
+		HashMap<String, String> section3 = new HashMap<>();
 		section3.put("key1", "value 1-3");
-		HashMap<String, HashMap<String,String>> sections = new HashMap<String, HashMap<String,String>>();
+		HashMap<String, HashMap<String,String>> sections = new HashMap<>();
 		sections.put("section1", section1);
 		sections.put("section2", section2);
 		sections.put("section3", section3);
@@ -85,7 +86,7 @@ public class TestConfigFiles {
 	@Test
 	public void testRepositoryConfig() throws Exception {
 		File repoLoc = RepoUtils.cloneRepoToTempLocation("log-1", "test-repocfg", false);
-		File hgrc = new File(repoLoc, ".hg/hgrc");
+		File hgrc = new File(repoLoc, ".hg/hgrc/");
 		String username = "John Q. Public <john.public@acme.com>";
 		String path1_key = "hg4j.gc";
 		String path1_value = "https://code.google.com/p/hg4j/";
