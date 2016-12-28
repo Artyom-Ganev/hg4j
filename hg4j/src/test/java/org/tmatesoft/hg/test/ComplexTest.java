@@ -17,6 +17,8 @@
 package org.tmatesoft.hg.test;
 
 import static org.junit.Assert.*;
+import static org.tmatesoft.hg.test.RepoUtils.createFile;
+import static org.tmatesoft.hg.util.Path.create;
 
 import java.io.File;
 
@@ -54,18 +56,18 @@ public class ComplexTest {
 		assertFalse("[sanity]", hgRepo.isInvalid());
 		assertEquals("[sanity]", 0, hgRepo.getChangelog().getRevisionCount());
 		// add 2 files
-		Path fa = Path.create("a"), fb = Path.create("b");
+		Path fa = create("a"), fb = create("b");
 		final File fileA = new File(repoLoc, fa.toString());
 		final File fileB = new File(repoLoc, fb.toString());
-		RepoUtils.createFile(fileA, "first file");
-		RepoUtils.createFile(fileB, "second file");
+		createFile(fileA, "first file");
+		createFile(fileB, "second file");
 		new HgAddRemoveCommand(hgRepo).add(fa, fb).execute();
 		new HgCommitCommand(hgRepo).message("FIRST").execute();
 		// add one more file
 		// remove one initial file
-		Path fc = Path.create("c");
+		Path fc = create("c");
 		final File fileC = new File(repoLoc, fc.toString());
-		RepoUtils.createFile(fileC, "third file");
+		createFile(fileC, "third file");
 		fileB.delete();
 		// TODO HgAddRemoveCommand needs #copy(from, to) method 
 		new HgAddRemoveCommand(hgRepo).add(fc).remove(fb).execute();
@@ -105,12 +107,12 @@ public class ComplexTest {
 	public void testMergeAndCommit() throws Exception {
 		File repoLoc = RepoUtils.createEmptyDir("composite-scenario-2");
 		HgRepository hgRepo = new HgInitCommand().location(repoLoc).revlogV1().execute();
-		Path fa = Path.create("file1"), fb = Path.create("file2"), fc = Path.create("file3");
+		Path fa = create("file1"), fb = create("file2"), fc = create("file3");
 		final File fileA = new File(repoLoc, fa.toString());
 		final File fileB = new File(repoLoc, fb.toString());
 		// rev0: +file1, +file2
-		RepoUtils.createFile(fileA, "first file");
-		RepoUtils.createFile(fileB, "second file");
+		createFile(fileA, "first file");
+		createFile(fileB, "second file");
 		new HgAddRemoveCommand(hgRepo).add(fa, fb).execute();
 		final HgCommitCommand commitCmd = new HgCommitCommand(hgRepo);
 		commitCmd.message("FIRST").execute();
@@ -126,7 +128,7 @@ public class ComplexTest {
 		// rev3: fork rev0, +file3, *file2
 		new HgCheckoutCommand(hgRepo).changeset(0).clean(true).execute();
 		final File fileC = new File(repoLoc, fc.toString());
-		RepoUtils.createFile(fileC, "third file");
+		createFile(fileC, "third file");
 		RepoUtils.modifyFileAppend(fileB, "B2");
 		new HgAddRemoveCommand(hgRepo).add(fc).execute();
 		commitCmd.message("FOURTH").execute();
